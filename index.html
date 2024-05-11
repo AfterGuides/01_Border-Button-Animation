@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(18, 18, 18);
+        }
+
+        .container {
+            position: relative;
+            padding: 4px;
+            background-color: aliceblue;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            background-color: #ff7f0f;
+            height: 500px;
+            width: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate-animation 4s linear infinite;
+            z-index: -1;
+        }
+
+        button {
+            background-color: #FBC638;
+            font-family: Fira Code;
+            font-size: 20px;
+            font-weight: 700;
+            height: 200px;
+            width: 200px;
+        }
+
+        @keyframes rotate-animation {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button">After Guides</button>
+    </div>
+</body>
+
+</html>
